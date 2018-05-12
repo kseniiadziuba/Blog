@@ -15,6 +15,7 @@ namespace Blog.Infrastructure.Data
         {
             _db = new BlogDbContext("BlogContext");
         }
+
         /// <summary>
         /// Creates the list of articles.
         /// </summary>
@@ -23,6 +24,7 @@ namespace Blog.Infrastructure.Data
         {
             return _db.Articles.ToList();
         }
+
         /// <summary>
         /// Creates the list of questions.
         /// </summary>
@@ -31,6 +33,7 @@ namespace Blog.Infrastructure.Data
         {
             return _db.Questions.ToList();
         }
+
         /// <summary>
         /// Creates the list of responses.
         /// </summary>

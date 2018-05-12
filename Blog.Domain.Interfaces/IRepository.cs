@@ -10,11 +10,13 @@ namespace Blog.Domain.Interfaces
         /// </summary>
         /// <returns>IEnumerable&lt;Article&gt;</returns>
         IEnumerable<Article> GetArticlesList();
+
         /// <summary>
         /// Creates the list of questions.
         /// </summary>
         /// <returns>IEnumerable&lt;Question&gt;</returns>
         IEnumerable<Question> GetQuestionsList();
+
         /// <summary>
         /// Creates the list of responses.
         /// </summary>

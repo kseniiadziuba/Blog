@@ -1,4 +1,5 @@
-﻿@using Blog.Domain.Core
+﻿@using System.Web.Mvc.Html
+@using Blog.Domain.Core
 @model IEnumerable<Article>
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,22 +9,47 @@
 <head>
 </head>
 <body>
-<div class="Columns">
-    <div class="Main-body">
-        @foreach (Article article in Model)
-        {
-            <h1>@article.Name</h1>
-            <p>@article.PublicationDate</p>
-            <p class="Text">@article.Text</p>
-        }
+    <div class="Columns">
+        <div class="Main-body">
+            @foreach (Article article in Model)
+            {
+                <h1>@article.Name</h1>
+                <p>@article.PublicationDate</p>
+                if (!string.IsNullOrEmpty(article.Text) && article.Text.Length > 200)
+                {
+                    <p id="Text">
+                        @Html.Raw(article.Text.Substring(0, 200))
+                        <a href="@Url.Action("FullIndex", "Home")">Подробнее</a>
+                    </p>
+                }
+                else
+                {
+                    <p id="Text">@Html.Raw(article.Text)</p>
+                }
+            }
+        </div>
+        <div class="Right-side">
+            <ul class="menu">
+                <li>@Html.ActionLink("Main", "Index", "Home")</li>
+                <li>@Html.ActionLink("Guest", "Index", "Guest")</li>
+                <li>@Html.ActionLink("Form", "Index", "QuestionForm")</li>
+            </ul>
+            @using (Html.BeginForm())
+            {
+                <h3>Голосование за любимую книгу</h3>
+                <p>Введите ваше имя:</p>
+                <input class="RadioCheck" type="text" name="PersonName" value="">
+                <br />
+                <p>Какая ваша любимая книга из серии?</p>
+                <input class="RadioCheck" type="radio" name="vote" value="Азазель" />
+                <p>Азазель</p>
+                <input class="RadioCheck" type="radio" name="vote" value="Смерть Ахиллеса" />
+                <p>Смерть Ахиллеса</p>
+                <input class="RadioCheck" type="radio" name="vote" value="Декоратор" />
+                <p>Декоратор</p>
+                <input type="submit" value="Отправить" checked="checked" />
+            }
+        </div>
     </div>
-    <div class="Right-side">
-        <ul class="menu">
-            <li>@Html.ActionLink("Main", "MainPage", "Home")</li>
-            <li>@Html.ActionLink("Guest", "Guest", "Home")</li>
-            <li>@Html.ActionLink("Form", "QuestionForm", "Home")</li>
-        </ul>
-    </div>
-</div>
 </body>
 </html>

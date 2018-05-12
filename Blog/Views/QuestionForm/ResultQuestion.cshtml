@@ -1,0 +1,18 @@
+﻿@using System.Web.Mvc.Html
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <p>Анкета принята от: @ViewBag.PersonName </p>
+        <p>Была ли информация полезна? @ViewBag.Name </p>
+        <p>Воспользуетесь ли Вы данным блогом снова? @ViewBag.Checks </p>
+        <p>Спасибо!</p>
+    }
+</body>
+</html>

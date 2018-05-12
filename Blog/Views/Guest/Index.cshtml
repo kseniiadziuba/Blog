@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <p>Enter your name</p>
+        <input type="text" name="person" value="" />
+        <p>Enter your Response</p>
+        <input type="text" name="response" value="" />
+        <br /><input type="submit" value="Send" checked="checked" />
+    }
+</body>
+</html>

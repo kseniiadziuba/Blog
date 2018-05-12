@@ -26,27 +26,22 @@
 .Columns {
     width: 80%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .Main-body {
-    width: 60%;
     background-color: #FFDC60;
     display: inline-block;
-    margin-right: -0.2%;
     text-align: center;
 }
 
 .Right-side {
-    width: 20%;
     background-color: #FDD05D;
     display: inline-block;
     position: absolute;
 }
 
 .Footer {
-    height: 40%;
+    height: 50%;
     margin-top: -1.2%;
     font-size: 16px;
     background-color: #DAAF2E;
@@ -63,14 +58,14 @@
     bottom: 45px;
 }
 
-.Text {
-    text-align: justify;
-}
-
 .RadioCheck {
     float: left;
 }
 
 .menu {
     list-style-type: none;
+}
+
+#Text {
+    text-align: center;
 }
