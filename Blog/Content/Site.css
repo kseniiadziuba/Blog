@@ -24,25 +24,28 @@
 }
 
 .Columns {
-    width: 80%;
+    width: 100%;
     display: block;
 }
 
 .Main-body {
+    width: 60%;
     background-color: #FFDC60;
     display: inline-block;
     text-align: center;
 }
 
 .Right-side {
+    width: 20%;
     background-color: #FDD05D;
     display: inline-block;
     position: absolute;
 }
 
 .Footer {
-    height: 50%;
-    margin-top: -1.2%;
+    height: 7%;
+    width: 100%;
+    margin-top: 2.8%;
     font-size: 16px;
     background-color: #DAAF2E;
 }
@@ -66,6 +69,14 @@
     list-style-type: none;
 }
 
-#Text {
+#text {
     text-align: center;
+}
+
+.input-validation-error {
+    color: red;
+}
+
+.field-validation-error {
+    color: red;
 }

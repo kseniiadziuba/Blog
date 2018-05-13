@@ -8,12 +8,13 @@ namespace Blog.Infrastructure.Data
     public class BlogRepository : IRepository
     {
         private readonly BlogDbContext _db;
+
         /// <summary>
         /// Creates the repository.
         /// </summary>
         public BlogRepository()
         {
-            _db = new BlogDbContext("BlogContext");
+            _db = new BlogDbContext("Blog");
         }
 
         /// <summary>
@@ -41,6 +42,13 @@ namespace Blog.Infrastructure.Data
         public IEnumerable<Response> GetResponsesList()
         {
             return _db.Responses.ToList();
+        }
+
+        public Response CreateResponse()
+        {
+            Response response = new Response();
+            _db.Responses.Add(response);
+            return response;
         }
     }
 }

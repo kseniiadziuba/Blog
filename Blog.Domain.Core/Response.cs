@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Blog.Domain.Core
 {
@@ -14,6 +15,8 @@ namespace Blog.Domain.Core
         /// AuthorName property represents the author's name of the question.
         /// </summary>
         /// <value>AuthorName gets/sets the string value for author's name of the question.</value>
+        [Required(ErrorMessage = "Input your name!")]
+        [StringLength(15, MinimumLength = 2, ErrorMessage = "Your name should be min 2, max 15!")]
         public string AuthorName { get; set; }
 
         /// <summary>
@@ -26,6 +29,7 @@ namespace Blog.Domain.Core
         /// Text property represents the text of the response.
         /// </summary>
         /// <value>Text gets/sets the string value for text of the response.</value>
+        [Required(ErrorMessage = "You have to write a response!")]
         public string Text { get; set; }
     }
 }

@@ -1,5 +1,5 @@
-﻿using System.Net.Http;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Blog.Domain.Core;
 using Blog.Domain.Interfaces;
 using Blog.Infrastructure.Data;
 
@@ -18,14 +18,17 @@ namespace Blog.Controllers
         /// Creates the Guest page.
         /// </summary>
         /// <returns>Guest page View</returns>
-        public ActionResult Index(string person, string response)
+        [HttpGet]
+        public ActionResult Index()
         {
-            if (Request.HttpMethod == HttpMethod.Get.Method)
-            {
-                return View(_repository.GetResponsesList());
-            }
-            ViewBag.AuthorName = person;
-            ViewBag.Text = response;
+            return View(_repository.CreateResponse());
+        }
+
+        [HttpPost]
+        public ActionResult Index(Response response)
+        {
+            ViewBag.AuthorName = response.AuthorName;
+            ViewBag.Text = response.Text;
             return View("GuestResponse");
         }
     }

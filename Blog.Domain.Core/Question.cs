@@ -17,7 +17,6 @@
         /// Name property represents the name of the question.
         /// </summary>
         /// <value>Name gets the string value for name of the question.</value>
-
         public string Name { get => _name; set => _name = value; }
 
         /// <summary>

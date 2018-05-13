@@ -21,14 +21,16 @@
     </script>
 </head>
 <body>
-<div class="LogoDiv">
-    <img class="Logo" src='http://didicgami.ru/blogfoto/fandorin.jpg'>
-    <h1 class="MyBlog">Приключения Эраста Фандорина</h1>
-</div>
-@RenderBody()
+    <div class="LogoDiv">
+        <img class="Logo" src='http://didicgami.ru/blogfoto/fandorin.jpg'>
+        <h1 class="MyBlog">Приключения Эраста Фандорина</h1>
+    </div>
+    @RenderBody()
 </body>
 </html>
 <footer class="Footer">
     <p class="Copyright">Cssauthor.com © 2018 All Rights Reserved</p>
     <div id="BackToTopButton"><img src="http://termatik.com/images/up.png" width="30" height="30" /></div>
 </footer>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")

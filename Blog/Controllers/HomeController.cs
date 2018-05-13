@@ -1,5 +1,4 @@
-﻿using System.Net.Http;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Blog.Domain.Interfaces;
 using Blog.Infrastructure.Data;
 
@@ -18,20 +17,32 @@ namespace Blog.Controllers
         /// Creates the Main page.
         /// </summary>
         /// <returns>Main page View</returns>
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View(_repository.GetArticlesList());
+        }
+
+        [HttpPost]
         public ActionResult Index(string personName, string vote)
         {
-            if (Request.HttpMethod == HttpMethod.Get.Method)
-            {
-                return View(_repository.GetArticlesList());
-            }
             ViewBag.PersonName = personName;
             ViewBag.VoteResult = vote;
             return View("VoteResult");
         }
 
+        [HttpGet]
         public ActionResult FullIndex()
         {
             return View(_repository.GetArticlesList());
+        }
+
+        [HttpPost]
+        public ActionResult FullIndex(string personName, string vote)
+        {
+            ViewBag.PersonName = personName;
+            ViewBag.VoteResult = vote;
+            return View("VoteResult");
         }
     }
 }

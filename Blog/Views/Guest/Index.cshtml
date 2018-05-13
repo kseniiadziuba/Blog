@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Blog.Domain.Core.Response
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!DOCTYPE html>
@@ -8,10 +9,14 @@
 <body>
     @using (Html.BeginForm())
     {
-        <p>Enter your name</p>
-        <input type="text" name="person" value="" />
-        <p>Enter your Response</p>
-        <input type="text" name="response" value="" />
+        <p>
+            Enter your name: @Html.EditorFor(m => m.AuthorName)
+            @Html.ValidationMessageFor(m => m.AuthorName)
+        </p>
+        <p>
+            Enter your Response: @Html.EditorFor(m => m.Text)
+            @Html.ValidationMessageFor(m => m.Text)
+        </p>
         <br /><input type="submit" value="Send" checked="checked" />
     }
 </body>

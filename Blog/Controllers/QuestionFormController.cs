@@ -14,6 +14,7 @@ namespace Blog.Controllers
         {
             _repository = new BlogRepository();
         }
+
         /// <summary>
         /// Creates the Question form page.
         /// </summary>

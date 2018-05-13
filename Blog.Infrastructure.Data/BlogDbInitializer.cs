@@ -3,8 +3,7 @@ using Blog.Domain.Core;
 
 namespace Blog.Infrastructure.Data
 {
-    public class BlogDbInitializer : //DropCreateDatabaseIfModelChanges<BlogDbContext>
-                                     DropCreateDatabaseAlways<BlogDbContext>
+    public class BlogDbInitializer : DropCreateDatabaseIfModelChanges<BlogDbContext>
     {
         /// <summary>
         /// Creates the database data.
@@ -32,7 +31,6 @@ namespace Blog.Infrastructure.Data
                 " все согласились бы считать смерть генерала естественной. " + "Раскрывший дело и убивший Ахимаса Фандорин в результате сам оказывается в двойственном положении: он выполнил свой долг," +
                 " но при этом узнал крайне грязную государственную тайну. К тому же у него в руках остаётся #портфель Соболева с деньгами," +
                 " собранными на организацию переворота(предполагалось, что его заберёт Ахимас в качестве платы за работу, но — не сложилось). В такой ситуации ему остаётся только бежать из России. Но своевременное вмешательство #генерал-губернатора и его доверенного помощника #Фрола_Ведищева позволяет сгладить ситуацию. Фандорин остаётся в России. Деньги он анонимно жертвует на строительство храма Христа Спасителя."));
-            db.Questions.Add(new Question());
             db.Questions.Add(new Question());
 
             base.Seed(db);

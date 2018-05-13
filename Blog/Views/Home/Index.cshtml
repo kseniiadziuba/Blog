@@ -9,33 +9,33 @@
 <head>
 </head>
 <body>
-    <div class="Columns">
-        <div class="Main-body">
-            @foreach (Article article in Model)
-            {
-                <h1>@article.Name</h1>
-                <p>@article.PublicationDate</p>
-                if (!string.IsNullOrEmpty(article.Text) && article.Text.Length > 200)
+    @using (Html.BeginForm())
+    {
+        <div class="Columns">
+            <div class="Main-body">
+                @foreach (Article article in Model)
                 {
-                    <p id="Text">
-                        @Html.Raw(article.Text.Substring(0, 200))
-                        <a href="@Url.Action("FullIndex", "Home")">Подробнее</a>
-                    </p>
+                    <h1>@article.Name</h1>
+                    <p>@article.PublicationDate</p>
+                    if (!string.IsNullOrEmpty(article.Text) && article.Text.Length > 200)
+                    {
+                        <p id="text">
+                            @Html.Raw(article.Text.Substring(0, 200))
+                            <a href="@Url.Action("FullIndex", "Home")">Подробнее</a>
+                        </p>
+                    }
+                    else
+                    {
+                        <p id="Text">@Html.Raw(article.Text)</p>
+                    }
                 }
-                else
-                {
-                    <p id="Text">@Html.Raw(article.Text)</p>
-                }
-            }
-        </div>
-        <div class="Right-side">
-            <ul class="menu">
-                <li>@Html.ActionLink("Main", "Index", "Home")</li>
-                <li>@Html.ActionLink("Guest", "Index", "Guest")</li>
-                <li>@Html.ActionLink("Form", "Index", "QuestionForm")</li>
-            </ul>
-            @using (Html.BeginForm())
-            {
+            </div>
+            <div class="Right-side">
+                <ul class="menu">
+                    <li>@Html.ActionLink("Main", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Guest", "Index", "Guest")</li>
+                    <li>@Html.ActionLink("Form", "Index", "QuestionForm")</li>
+                </ul>
                 <h3>Голосование за любимую книгу</h3>
                 <p>Введите ваше имя:</p>
                 <input class="RadioCheck" type="text" name="PersonName" value="">
@@ -48,8 +48,8 @@
                 <input class="RadioCheck" type="radio" name="vote" value="Декоратор" />
                 <p>Декоратор</p>
                 <input type="submit" value="Отправить" checked="checked" />
-            }
+            </div>
         </div>
-    </div>
+    }
 </body>
 </html>

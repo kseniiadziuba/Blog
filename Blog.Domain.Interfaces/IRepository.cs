@@ -17,10 +17,6 @@ namespace Blog.Domain.Interfaces
         /// <returns>IEnumerable&lt;Question&gt;</returns>
         IEnumerable<Question> GetQuestionsList();
 
-        /// <summary>
-        /// Creates the list of responses.
-        /// </summary>
-        /// <returns>IEnumerable&lt;Response&gt;</returns>
-        IEnumerable<Response> GetResponsesList();
+        Response CreateResponse();
     }
 }
