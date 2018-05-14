@@ -21,7 +21,7 @@
                     {
                         <p id="text">
                             @Html.Raw(article.Text.Substring(0, 200))
-                            <a href="@Url.Action("FullIndex", "Home")">Подробнее</a>
+                            <a href="Home/FullArticle?id=@article.ArticleId&name=@article.Name&publicationDate=@article.PublicationDate&text=@article.Text&tags=@article.SearchTags()">Подробнее</a>
                         </p>
                     }
                     else

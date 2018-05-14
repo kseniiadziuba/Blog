@@ -18,5 +18,7 @@ namespace Blog.Domain.Interfaces
         IEnumerable<Question> GetQuestionsList();
 
         Response CreateResponse();
+
+        Article GetArticle(int id);
     }
 }

@@ -18,14 +18,13 @@ namespace Blog.Domain.Core
         /// Name property represents the author's name of the article.
         /// </summary>
         /// <value>Name gets the string value for author's name of the article.</value>
-
         public string Name { get; set; }
 
         /// <summary>
         /// Publication Date property represents the publication date of the article.
         /// </summary>
         /// <value>Publication Date gets the DateTime value for publication date of the article.</value>
-        public DateTime PublicationDate { get; set; }
+        public string PublicationDate { get; set; }
 
         /// <summary>
         /// Text property represents the text of the article.
@@ -49,14 +48,14 @@ namespace Blog.Domain.Core
         public Article(string name, string publicationDate, string text)
         {
             Name = name;
-            PublicationDate = Convert.ToDateTime(publicationDate);
+            PublicationDate = (Convert.ToDateTime(publicationDate)).ToShortDateString();
             Text = text;
         }
 
         public string SearchTags()
         {
             string text = Text;
-            Regex regex = new Regex(@"\s(?<hashTag>\#[\w\-\\_]+)");
+            Regex regex = new Regex(@"\s(?<hashTag>\@[\w\-\\_]+)");
             MatchCollection matches = regex.Matches(text);
             text = null;
             if (matches.Count > 0)

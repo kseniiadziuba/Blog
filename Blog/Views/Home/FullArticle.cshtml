@@ -1,6 +1,4 @@
-﻿@using Blog.Domain.Core
-@model IEnumerable<Article>
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!DOCTYPE html>
@@ -12,15 +10,15 @@
     {
         <div class="Columns">
             <div class="Main-body">
-                @foreach (Article article in Model)
-                {
-                    <h1>@article.Name</h1>
-                    <p>@article.PublicationDate</p>
-                    <p>@article.Text</p>
-                    <div>
-                        <p>@article.SearchTags()</p>
-                    </div>
-                }
+                <input type="hidden" value="@ViewBag.Id" name="id" />
+                <input type="hidden" value="@ViewBag.Name" name="name" />
+                <input type="hidden" value="@ViewBag.PublicationDate" name="publicationDate" />
+                <input type="hidden" value="@ViewBag.Text" name="text" />
+                <input type="hidden" value="@ViewBag.Tags" name="tags" />
+                <h1>@ViewBag.Name</h1>
+                <p>@ViewBag.PublicationDate</p>
+                <p>@ViewBag.Text</p>
+                <p>@ViewBag.Tags</p>
             </div>
             <div class="Right-side">
                 <ul class="menu">

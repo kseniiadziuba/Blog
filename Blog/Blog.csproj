@@ -195,7 +195,7 @@
     <Content Include="Views\Guest\Index.cshtml" />
     <Content Include="Views\QuestionForm\Index.cshtml" />
     <Content Include="Views\QuestionForm\ResultQuestion.cshtml" />
-    <Content Include="Views\Home\FullIndex.cshtml" />
+    <Content Include="Views\Home\FullArticle.cshtml" />
     <Content Include="Views\Home\VoteResult.cshtml" />
     <Content Include="Views\Guest\GuestResponse.cshtml" />
   </ItemGroup>

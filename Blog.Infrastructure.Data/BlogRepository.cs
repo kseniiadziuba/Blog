@@ -44,11 +44,26 @@ namespace Blog.Infrastructure.Data
             return _db.Responses.ToList();
         }
 
+        /// <summary>
+        /// Creates a response.
+        /// </summary>
+        /// <returns>Response</returns>
         public Response CreateResponse()
         {
             Response response = new Response();
             _db.Responses.Add(response);
             return response;
+        }
+
+        /// <summary>
+        /// Gets the article by id.
+        /// </summary>
+        /// <param name="id">Id of article that is needed to find.</param>
+        /// <returns>Article</returns>
+        public Article GetArticle(int id)
+        {
+            Article article = _db.Articles.Find(id);
+            return article;
         }
     }
 }

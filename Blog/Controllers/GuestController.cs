@@ -15,7 +15,7 @@ namespace Blog.Controllers
         }
 
         /// <summary>
-        /// Creates the Guest page.
+        /// Creates the Guest page on GET method.
         /// </summary>
         /// <returns>Guest page View</returns>
         [HttpGet]
@@ -24,6 +24,10 @@ namespace Blog.Controllers
             return View(_repository.CreateResponse());
         }
 
+        /// <summary>
+        /// Creates the Guest page on POST method.
+        /// </summary>
+        /// <returns>Guest page View</returns>
         [HttpPost]
         public ActionResult Index(Response response)
         {
