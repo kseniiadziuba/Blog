@@ -42,12 +42,15 @@
     position: absolute;
 }
 
-.Footer {
+#footer {
+    position: absolute;
     height: 7%;
-    width: 100%;
-    margin-top: 2.8%;
-    font-size: 16px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: #DAAF2E;
+    text-align: center;
+    color: black;
 }
 
 .Copyright {
