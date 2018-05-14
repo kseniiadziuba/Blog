@@ -5,13 +5,9 @@ VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog", "Blog\Blog.csproj", "{C21820D5-DF3A-4FED-9583-6A9ED161FDF4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blog.Domain.Core", "Blog.Domain.Core", "{3F7F53D3-A0E4-40B6-AA1F-7B4AA28F9A2E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Domain.Core", "Blog.Domain.Core\Blog.Domain.Core.csproj", "{DFA8FA42-2237-48FF-8F35-923CDBEC93EC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Domain.Interfaces", "Blog.Domain.Interfaces\Blog.Domain.Interfaces.csproj", "{91F1A35C-91C9-4807-84A1-13CF67137992}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blog.Infrastructure", "Blog.Infrastructure", "{E241ECAB-3AD8-4B95-AB71-D3A47D62D26A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Infrastructure.Data", "Blog.Infrastructure.Data\Blog.Infrastructure.Data.csproj", "{1B0AEB88-C7CF-40F5-A8C1-13EEDD4CA95C}"
 EndProject
@@ -40,11 +36,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{DFA8FA42-2237-48FF-8F35-923CDBEC93EC} = {3F7F53D3-A0E4-40B6-AA1F-7B4AA28F9A2E}
-		{91F1A35C-91C9-4807-84A1-13CF67137992} = {3F7F53D3-A0E4-40B6-AA1F-7B4AA28F9A2E}
-		{1B0AEB88-C7CF-40F5-A8C1-13EEDD4CA95C} = {E241ECAB-3AD8-4B95-AB71-D3A47D62D26A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {787763E0-DA76-4FF2-AA81-314AA399204D}
