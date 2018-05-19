@@ -1,0 +1,18 @@
+﻿@model Blog.Domain.Core.Article
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <p>
+        Введите название статьи: @Html.EditorFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </p>
+    <p>
+        Введите текст статьи: @Html.EditorFor(m => m.Text)
+        @Html.ValidationMessageFor(m => m.Text)
+    </p>
+    <p>Выберите теги: @Html.ListBox("tags", new MultiSelectList(new[] {"@admin_publication", "@new_article", "@article", "@admin"}))</p>
+    <br/><input type="submit" value="Send" ) />
+}

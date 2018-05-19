@@ -1,4 +1,7 @@
-﻿@{
+﻿@using System.Web.Mvc.Html
+@using Blog.Domain.Core
+@model IEnumerable<Article>
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -6,15 +9,22 @@
 {
     <div class="Columns">
         <div class="Main-body">
-            <input type="hidden" value="@ViewBag.Id" name="id" />
-            <input type="hidden" value="@ViewBag.Name" name="name" />
-            <input type="hidden" value="@ViewBag.PublicationDate" name="publicationDate" />
-            <input type="hidden" value="@ViewBag.Text" name="text" />
-            <input type="hidden" value="@ViewBag.Tags" name="tags" />
-            <h1>@ViewBag.Name</h1>
-            <p>@ViewBag.PublicationDate</p>
-            <p>@ViewBag.Text</p>
-            <p>@ViewBag.Tags</p>
+            @foreach (Article article in Model)
+            {
+                <h1>@article.Name</h1>
+                <p>@article.PublicationDate</p>
+                if (!string.IsNullOrEmpty(article.Text) && article.Text.Length > 200)
+                {
+                    <p id="text">
+                        @Html.Raw(article.Text.Substring(0, 200))
+                        <a href="Home/FullArticle?id=@article.ArticleId&name=@article.Name&publicationDate=@article.PublicationDate&text=@article.Text&tags=@article.SearchTags()">Подробнее</a>
+                    </p>
+                }
+                else
+                {
+                    <p id="Text">@Html.Raw(article.Text)</p>
+                }
+            }
         </div>
         <div class="Right-side">
             <ul class="menu">
@@ -29,7 +39,8 @@
             <h3>Голосование за любимую книгу</h3>
             <p>Введите ваше имя:</p>
             <input class="RadioCheck" type="text" name="PersonName" value="">
-            <br /><p>Какая ваша любимая книга из серии?</p>
+            <br />
+            <p>Какая ваша любимая книга из серии?</p>
             <input class="RadioCheck" type="radio" name="vote" value="Азазель" />
             <p>Азазель</p>
             <input class="RadioCheck" type="radio" name="vote" value="Смерть Ахиллеса" />

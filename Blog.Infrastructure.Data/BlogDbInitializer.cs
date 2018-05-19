@@ -3,8 +3,7 @@ using Blog.Domain.Core;
 
 namespace Blog.Infrastructure.Data
 {
-    public class BlogDbInitializer : //DropCreateDatabaseIfModelChanges<BlogDbContext>
-    DropCreateDatabaseAlways<BlogDbContext>
+    public class BlogDbInitializer : DropCreateDatabaseIfModelChanges<BlogDbContext>
     {
         /// <summary>
         /// Creates the database data.

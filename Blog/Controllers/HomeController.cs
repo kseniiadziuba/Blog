@@ -4,6 +4,7 @@ using Blog.Infrastructure.Data;
 
 namespace Blog.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly IRepository _repository;
@@ -18,7 +19,7 @@ namespace Blog.Controllers
         /// </summary>
         /// <returns>Main page View</returns>
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult MainIndex()
         {
             return View(_repository.GetArticlesList());
         }
@@ -28,7 +29,7 @@ namespace Blog.Controllers
         /// </summary>
         /// <returns>Main page View</returns>
         [HttpPost]
-        public ActionResult Index(string personName, string vote)
+        public ActionResult MainIndex(string personName, string vote)
         {
             ViewBag.PersonName = personName;
             ViewBag.VoteResult = vote;

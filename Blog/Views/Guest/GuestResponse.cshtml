@@ -2,16 +2,10 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    @using (Html.BeginForm())
-    {
-        <p>Комментарий оставил пользователь @ViewBag.AuthorName </p>
-        <p>Комментарий: @ViewBag.Text </p>
-        <p>Спасибо!</p>
-    }
-</body>
-</html>
+
+@using (Html.BeginForm())
+{
+    <p>Комментарий оставил пользователь @ViewBag.AuthorName </p>
+    <p>Комментарий: @ViewBag.Text </p>
+    <p>Спасибо!</p>
+}

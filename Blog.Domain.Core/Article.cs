@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Text.RegularExpressions;
 
 namespace Blog.Domain.Core
@@ -18,6 +19,7 @@ namespace Blog.Domain.Core
         /// Name property represents the author's name of the article.
         /// </summary>
         /// <value>Name gets the string value for author's name of the article.</value>
+        [Microsoft.Build.Framework.Required]
         public string Name { get; set; }
 
         /// <summary>
@@ -30,6 +32,8 @@ namespace Blog.Domain.Core
         /// Text property represents the text of the article.
         /// </summary>
         /// <value>Text gets the string value for text of the article.</value>
+        [Microsoft.Build.Framework.Required]
+        [DataType(DataType.MultilineText)]
         public string Text { get; set; }
 
         /// /// <summary>
