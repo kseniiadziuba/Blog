@@ -10,9 +10,9 @@
         @Html.ValidationMessageFor(m => m.Name)
     </p>
     <p>
-        Введите текст статьи: @Html.EditorFor(m => m.Text)
-        @Html.ValidationMessageFor(m => m.Text)
+    <p>Введите текст статьи:</p> @Html.EditorFor(m => m.Text)
+    @Html.ValidationMessageFor(m => m.Text)
     </p>
-    <p>Выберите теги: @Html.ListBox("tags", new MultiSelectList(new[] {"@admin_publication", "@new_article", "@article", "@admin"}))</p>
-    <br/><input type="submit" value="Send" ) />
+    <p><p>Выберите теги:</p> @Html.ListBox("tags", new MultiSelectList(new[] { "@admin_publication", "@new_article", "@article", "@admin" }))</p>
+    <br /><input type="submit" value="Send" ) />
 }
